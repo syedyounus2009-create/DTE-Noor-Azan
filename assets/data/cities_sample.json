@@ -1,0 +1,14 @@
+[
+  {"id": "EG-cairo", "name_en": "Cairo", "name_ar": "القاهرة", "country_code": "EG", "country_en": "Egypt", "latitude": 30.0444, "longitude": 31.2357, "timezone": "Africa/Cairo", "default_method": "egypt", "default_madhab": "standard"},
+  {"id": "SA-makkah", "name_en": "Makkah", "name_ar": "مكة المكرمة", "country_code": "SA", "country_en": "Saudi Arabia", "latitude": 21.4225, "longitude": 39.8262, "timezone": "Asia/Riyadh", "default_method": "ummAlQura", "default_madhab": "standard"},
+  {"id": "SA-madinah", "name_en": "Madinah", "name_ar": "المدينة المنورة", "country_code": "SA", "country_en": "Saudi Arabia", "latitude": 24.5247, "longitude": 39.5692, "timezone": "Asia/Riyadh", "default_method": "ummAlQura", "default_madhab": "standard"},
+  {"id": "AE-dubai", "name_en": "Dubai", "name_ar": "دبي", "country_code": "AE", "country_en": "United Arab Emirates", "latitude": 25.2048, "longitude": 55.2708, "timezone": "Asia/Dubai", "default_method": "dubai", "default_madhab": "standard"},
+  {"id": "PK-karachi", "name_en": "Karachi", "name_ar": "كراتشي", "country_code": "PK", "country_en": "Pakistan", "latitude": 24.8607, "longitude": 67.0011, "timezone": "Asia/Karachi", "default_method": "karachi", "default_madhab": "hanafi"},
+  {"id": "IN-delhi", "name_en": "Delhi", "name_ar": "دلهي", "country_code": "IN", "country_en": "India", "latitude": 28.7041, "longitude": 77.1025, "timezone": "Asia/Kolkata", "default_method": "karachi", "default_madhab": "hanafi"},
+  {"id": "TR-istanbul", "name_en": "Istanbul", "name_ar": "اسطنبول", "country_code": "TR", "country_en": "Turkey", "latitude": 41.0082, "longitude": 28.9784, "timezone": "Europe/Istanbul", "default_method": "diyanet", "default_madhab": "standard"},
+  {"id": "ID-jakarta", "name_en": "Jakarta", "name_ar": "جاكرتا", "country_code": "ID", "country_en": "Indonesia", "latitude": -6.2088, "longitude": 106.8456, "timezone": "Asia/Jakarta", "default_method": "singapore", "default_madhab": "standard"},
+  {"id": "MY-kualalumpur", "name_en": "Kuala Lumpur", "name_ar": "كوالالمبور", "country_code": "MY", "country_en": "Malaysia", "latitude": 3.1390, "longitude": 101.6869, "timezone": "Asia/Kuala_Lumpur", "default_method": "jakim", "default_madhab": "standard"},
+  {"id": "US-newyork", "name_en": "New York", "name_ar": "نيويورك", "country_code": "US", "country_en": "United States", "latitude": 40.7128, "longitude": -74.0060, "timezone": "America/New_York", "default_method": "isna", "default_madhab": "standard"},
+  {"id": "GB-london", "name_en": "London", "name_ar": "لندن", "country_code": "GB", "country_en": "United Kingdom", "latitude": 51.5072, "longitude": -0.1276, "timezone": "Europe/London", "default_method": "mwl", "default_madhab": "standard"},
+  {"id": "IR-tehran", "name_en": "Tehran", "name_ar": "طهران", "country_code": "IR", "country_en": "Iran", "latitude": 35.6892, "longitude": 51.3890, "timezone": "Asia/Tehran", "default_method": "tehran", "default_madhab": "standard"}
+]

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Flutter tooling needs INTERNET for the debug/hot-reload VM service;
+         already declared in the main manifest for the mosque/geocoding
+         features, so nothing additional is required here. -->
+</manifest>

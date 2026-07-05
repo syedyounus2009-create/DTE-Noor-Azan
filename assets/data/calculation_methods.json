@@ -1,0 +1,13 @@
+[
+  {"code": "mwl", "displayName": "Muslim World League", "fajrAngle": 18, "ishaAngle": 17},
+  {"code": "isna", "displayName": "Islamic Society of North America", "fajrAngle": 15, "ishaAngle": 15},
+  {"code": "egypt", "displayName": "Egyptian General Authority", "fajrAngle": 19.5, "ishaAngle": 17.5},
+  {"code": "karachi", "displayName": "Univ. of Islamic Sciences, Karachi", "fajrAngle": 18, "ishaAngle": 18},
+  {"code": "ummAlQura", "displayName": "Umm al-Qura, Makkah", "fajrAngle": 18.5, "ishaIntervalMinutes": 90},
+  {"code": "dubai", "displayName": "Dubai", "fajrAngle": 18.2, "ishaAngle": 18.2},
+  {"code": "moonsighting", "displayName": "Moonsighting Committee", "fajrAngle": 18, "ishaAngle": 18},
+  {"code": "singapore", "displayName": "Majlis Ugama Islam Singapura", "fajrAngle": 20, "ishaAngle": 18},
+  {"code": "tehran", "displayName": "Institute of Geophysics, Tehran", "fajrAngle": 17.7, "ishaAngle": 14},
+  {"code": "diyanet", "displayName": "Diyanet İşleri Başkanlığı", "fajrAngle": 18, "ishaAngle": 17},
+  {"code": "jakim", "displayName": "JAKIM (Malaysia)", "fajrAngle": 20, "ishaAngle": 18}
+]

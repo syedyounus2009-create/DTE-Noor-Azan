@@ -1,0 +1,35 @@
+.dart_tool/
+.packages
+build/
+.flutter-plugins
+.flutter-plugins-dependencies
+.pub-cache/
+.pub/
+*.g.dart
+*.freezed.dart
+.idea/
+*.iml
+.vscode/
+
+# Platform build outputs
+android/.gradle
+android/app/debug
+android/app/profile
+android/app/release
+ios/Flutter/Flutter.framework
+ios/Flutter/Flutter.podspec
+ios/Pods/
+ios/.symlinks/
+windows/flutter/ephemeral/
+linux/flutter/ephemeral/
+macos/Flutter/ephemeral/
+
+*.log
+.DS_Store
+
+# Never commit real signing material or machine-specific SDK paths
+android/local.properties
+android/key.properties
+android/app/*.jks
+android/app/*.keystore
+

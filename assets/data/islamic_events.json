@@ -1,0 +1,12 @@
+[
+  {"hijriMonth": 1, "hijriDay": 1, "name_en": "Islamic New Year", "name_ar": "رأس السنة الهجرية"},
+  {"hijriMonth": 1, "hijriDay": 10, "name_en": "Day of Ashura", "name_ar": "يوم عاشوراء"},
+  {"hijriMonth": 3, "hijriDay": 12, "name_en": "Mawlid al-Nabi", "name_ar": "المولد النبوي"},
+  {"hijriMonth": 7, "hijriDay": 27, "name_en": "Isra and Mi'raj", "name_ar": "الإسراء والمعراج"},
+  {"hijriMonth": 8, "hijriDay": 15, "name_en": "Mid-Sha'ban", "name_ar": "ليلة النصف من شعبان"},
+  {"hijriMonth": 9, "hijriDay": 1, "name_en": "Start of Ramadan", "name_ar": "بداية رمضان"},
+  {"hijriMonth": 9, "hijriDay": 27, "name_en": "Laylat al-Qadr (observed)", "name_ar": "ليلة القدر"},
+  {"hijriMonth": 10, "hijriDay": 1, "name_en": "Eid al-Fitr", "name_ar": "عيد الفطر"},
+  {"hijriMonth": 12, "hijriDay": 9, "name_en": "Day of Arafah", "name_ar": "يوم عرفة"},
+  {"hijriMonth": 12, "hijriDay": 10, "name_en": "Eid al-Adha", "name_ar": "عيد الأضحى"}
+]
