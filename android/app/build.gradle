@@ -1,3 +1,9 @@
+plugins {
+    id "com.android.application"
+    id "kotlin-android"
+    id "dev.flutter.flutter-gradle-plugin"
+}
+
 def localProperties = new Properties()
 def localPropertiesFile = rootProject.file("local.properties")
 if (localPropertiesFile.exists()) {
@@ -11,35 +17,29 @@ def flutterVersionName = localProperties.getProperty("flutter.versionName") ?: "
 
 // Release signing: reads from android/key.properties if present (local
 // builds), or from environment variables (CI). Falls back to the debug
-// keystore so `flutter build apk` still produces an installable,
-// unsigned-for-release-store but perfectly side-loadable APK with zero
-// setup — see android/README-SIGNING.md.
+// keystore so `flutter build apk` still produces an installable APK.
 def keystorePropertiesFile = rootProject.file("key.properties")
 def keystoreProperties = new Properties()
 def hasKeystoreFile = keystorePropertiesFile.exists()
+
 if (hasKeystoreFile) {
     keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
 }
+
 def hasEnvSigning = System.getenv("NOOR_KEYSTORE_PATH") != null
 
-plugins {
-    id "com.android.application"
-    id "kotlin-android"
-    id "dev.flutter.flutter-gradle-plugin"
-}
-
 android {
-    namespace = "com.dolphintechno.noor"
-    compileSdk = 34
-    ndkVersion = flutter.ndkVersion
+    namespace "com.dolphintechno.noor"
+    compileSdk 34
+    ndkVersion flutter.ndkVersion
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 
     kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_1_8
+        jvmTarget = "1.8"
     }
 
     sourceSets {
@@ -47,11 +47,11 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.dolphintechno.noor"
-        minSdk = 23
-        targetSdk = 34
-        versionCode = flutterVersionCode.toInteger()
-        versionName = flutterVersionName
+        applicationId "com.dolphintechno.noor"
+        minSdk 23
+        targetSdk 34
+        versionCode flutterVersionCode.toInteger()
+        versionName flutterVersionName
     }
 
     signingConfigs {
@@ -72,22 +72,20 @@ android {
 
     buildTypes {
         release {
-            // Falls back to the debug keystore when no real signing config
-            // is available, so a plain `flutter build apk` always succeeds
-            // and produces something you can side-load immediately.
-            signingConfig = (hasKeystoreFile || hasEnvSigning) ? signingConfigs.release : signingConfigs.debug
+            signingConfig (hasKeystoreFile || hasEnvSigning) ? signingConfigs.release : signingConfigs.debug
             minifyEnabled true
             shrinkResources true
             proguardFiles getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
         }
+
         debug {
-            applicationIdSuffix = ".debug"
+            applicationIdSuffix ".debug"
         }
     }
 }
 
 flutter {
-    source = "../.."
+    source "../.."
 }
 
 dependencies {
