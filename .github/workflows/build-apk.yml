@@ -37,7 +37,8 @@ jobs:
         env:
           KEYSTORE_BASE64: ${{ secrets.NOOR_KEYSTORE_BASE64 }}
         run: |
-          echo $KEYSTORE_BASE64 | base64 -d > android/app/noor-release.jks
+          printf "%s" "$KEYSTORE_BASE64" | base64 -d > android/app/noor-release.jks
+          ls -lh android/app/noor-release.jks
 
       - name: Build APK
         env:
