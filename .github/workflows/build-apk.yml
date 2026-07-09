@@ -21,17 +21,38 @@ jobs:
         with:
           flutter-version: "3.22.0"
 
+      - name: Flutter Doctor
+        run: flutter doctor -v
+
       - name: Install dependencies
         run: flutter pub get
 
       - name: Run tests
         run: flutter test test/core_math_test.dart test/prayer_time_engine_test.dart
 
+      - name: Clean build
+        run: flutter clean
+
+      - name: Decode Keystore
+        env:
+          KEYSTORE_BASE64: ${{ secrets.NOOR_KEYSTORE_BASE64 }}
+        run: |
+          echo $KEYSTORE_BASE64 | base64 -d > android/app/noor-release.jks
+
       - name: Build APK
-        run: flutter build apk --release
+        env:
+          NOOR_KEYSTORE_PATH: ${{ github.workspace }}/android/app/noor-release.jks
+          NOOR_KEYSTORE_PASSWORD: ${{ secrets.NOOR_KEYSTORE_PASSWORD }}
+          NOOR_KEY_ALIAS: ${{ secrets.NOOR_KEY_ALIAS }}
+          NOOR_KEY_PASSWORD: ${{ secrets.NOOR_KEY_PASSWORD }}
+        run: flutter build apk --release -v
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: noor-release-apk
           path: build/app/outputs/flutter-apk/app-release.apk
+
+      - name: Clean up keystore
+        if: always()
+        run: rm -f android/app/noor-release.jks
