@@ -34,16 +34,6 @@ if (localPropertiesFile.exists()) {
 def flutterVersionCode = localProperties.getProperty("flutter.versionCode") ?: "1"
 def flutterVersionName = localProperties.getProperty("flutter.versionName") ?: "1.0.0"
 
-def keystorePropertiesFile = rootProject.file("key.properties")
-def keystoreProperties = new Properties()
-def hasKeystoreFile = keystorePropertiesFile.exists()
-
-if (hasKeystoreFile) {
-    keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
-}
-
-def hasEnvSigning = System.getenv("NOOR_KEYSTORE_PATH") != null
-
 android {
     namespace "com.dolphintechno.noor"
     compileSdk 34
@@ -70,25 +60,8 @@ android {
         versionName flutterVersionName
     }
 
-    signingConfigs {
-        release {
-            if (hasKeystoreFile && keystoreProperties.getProperty("storeFile")) {
-                storeFile file(keystoreProperties.getProperty("storeFile"))
-                storePassword keystoreProperties.getProperty("storePassword")
-                keyAlias keystoreProperties.getProperty("keyAlias")
-                keyPassword keystoreProperties.getProperty("keyPassword")
-            } else if (hasEnvSigning) {
-                storeFile file(System.getenv("NOOR_KEYSTORE_PATH"))
-                storePassword System.getenv("NOOR_KEYSTORE_PASSWORD")
-                keyAlias System.getenv("NOOR_KEY_ALIAS")
-                keyPassword System.getenv("NOOR_KEY_PASSWORD")
-            }
-        }
-    }
-
     buildTypes {
         release {
-            signingConfig (hasKeystoreFile || hasEnvSigning) ? signingConfigs.release : signingConfigs.debug
             minifyEnabled true
             shrinkResources true
             proguardFiles getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
