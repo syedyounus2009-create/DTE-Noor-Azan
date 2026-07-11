@@ -32,7 +32,8 @@ jobs:
 
       - name: Clean build
         run: flutter clean
-           
+
+      - name: Build APK
         run: flutter build apk --release -v
 
       - name: Upload APK
@@ -40,7 +41,3 @@ jobs:
         with:
           name: noor-release-apk
           path: build/app/outputs/flutter-apk/app-release.apk
-
-      - name: Clean up keystore
-        if: always()
-        run: rm -f android/app/noor-release.jks
