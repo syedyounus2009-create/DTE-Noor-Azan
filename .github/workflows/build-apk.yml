@@ -32,13 +32,7 @@ jobs:
 
       - name: Clean build
         run: flutter clean
-
-           - name: Build APK
-        env:
-          NOOR_KEYSTORE_PATH: ${{ github.workspace }}/android/app/noor-release.jks
-          NOOR_KEYSTORE_PASSWORD: ${{ secrets.NOOR_KEYSTORE_PASSWORD }}
-          NOOR_KEY_ALIAS: ${{ secrets.NOOR_KEY_ALIAS }}
-          NOOR_KEY_PASSWORD: ${{ secrets.NOOR_KEY_PASSWORD }}
+           
         run: flutter build apk --release -v
 
       - name: Upload APK
