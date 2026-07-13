@@ -16,10 +16,22 @@ jobs:
         with:
           distribution: temurin
           java-version: "17"
+          cache: gradle  # ✅ Cache Gradle
 
       - uses: subosito/flutter-action@v2
         with:
           flutter-version: "3.22.0"
+          cache: true  # ✅ Cache Flutter SDK
+
+      - name: Cache Flutter pub dependencies
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.pub-cache
+            $FLUTTER_HOME/.pub-cache
+          key: ${{ runner.os }}-pub-${{ hashFiles('**/pubspec.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-pub-
 
       - name: Flutter Doctor
         run: flutter doctor -v
@@ -30,8 +42,7 @@ jobs:
       - name: Run tests
         run: flutter test test/core_math_test.dart test/prayer_time_engine_test.dart
 
-      - name: Clean build
-        run: flutter clean
+      # ❌ REMOVE flutter clean - it wipes your cache!
 
       - name: Build APK
         run: flutter build apk --release -v
