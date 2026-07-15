@@ -58,7 +58,12 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
-  generate: true
+  # generate: true requires lib/l10n/*.arb + l10n.yaml, neither of which
+  # exist yet (see README: "Multi-language / RTL — Not implemented").
+  # Left enabled, this makes `flutter pub get`/`flutter build` fail trying
+  # to generate localizations from a source that isn't there. Re-enable
+  # once ARB scaffolding is actually added.
+  generate: false
 
   assets:
     - assets/data/calculation_methods.json
